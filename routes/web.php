@@ -1,23 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AnimesController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/animes', function () {
-    $animes = [
-        'Kimetsu no Yaiba',
-        'Bakemonogatari',
-        'Shingeki no Kyoujin'
-    ];
-
-    $html = "<ul>";
-    foreach($animes as $anime){
-        $html .= "<li>$anime</li>";
-    }
-    $html .= "</ul>";
-
-    return $html;
-});
+Route::get('/animes', [AnimesController::class, 'listarAnimes']);
