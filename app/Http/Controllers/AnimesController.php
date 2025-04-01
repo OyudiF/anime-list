@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class AnimesController extends Controller {
-    public function listarAnimes() {
+    public function listarAnimes(Request $request) {
         $animes = [
             'Kimetsu no Yaiba',
             'Bakemonogatari',
